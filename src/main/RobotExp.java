@@ -14,10 +14,12 @@ public class RobotExp {
         this.listChar = listChar;
     }
 
-    public void startRobot()
+    public void startRobot() {
+        robotWriting();
 
-    {
+    }
 
+    public void robotWriting() {
         try {
 
             java.awt.Robot robot = new java.awt.Robot();
@@ -29,29 +31,55 @@ public class RobotExp {
             robot.delay(5000);
             for (Character symbolChar : listChar)
                 switch (symbolChar) {
-                    case '1' : robot.keyPress(KeyEvent.VK_1);
-                    case '2' : robot.keyPress(KeyEvent.VK_2);
-                    case '3' : robot.keyPress(KeyEvent.VK_3);
-                    case '4' : robot.keyPress(KeyEvent.VK_4);
-                    case '5' : robot.keyPress(KeyEvent.VK_5);
-                    case '6' : robot.keyPress(KeyEvent.VK_6);
-                    case '7' : robot.keyPress(KeyEvent.VK_7);
-                    case '8' : robot.keyPress(KeyEvent.VK_8);
-                    case '9' : robot.keyPress(KeyEvent.VK_9);
-                    case '0' : robot.keyPress(KeyEvent.VK_0);
-                    case ',' : robot.keyPress(KeyEvent.VK_COMMA);
-
+                    case '1':
+                        robot.keyPress(KeyEvent.VK_1);
+                        break;
+                    case '2':
+                        robot.keyPress(KeyEvent.VK_2);
+                        break;
+                    case '3':
+                        robot.keyPress(KeyEvent.VK_3);
+                        break;
+                    case '4':
+                        robot.keyPress(KeyEvent.VK_4);
+                        break;
+                    case '5':
+                        robot.keyPress(KeyEvent.VK_5);
+                        break;
+                    case '6':
+                        robot.keyPress(KeyEvent.VK_6);
+                        break;
+                    case '7':
+                        robot.keyPress(KeyEvent.VK_7);
+                        break;
+                    case '8':
+                        robot.keyPress(KeyEvent.VK_8);
+                        break;
+                    case '9':
+                        robot.keyPress(KeyEvent.VK_9);
+                        break;
+                    case '0':
+                        robot.keyPress(KeyEvent.VK_0);
+                        break;
+                    case ',':
+                        robot.keyPress(KeyEvent.VK_COMMA);
+                        break;
+                    // по дефолту нужно сделать выбрашенную ошибку о том что работ не понимает что делать.
+                    case ' ':
+                        robotManipulation();
                 }
 
 
+        } catch (AWTException ex) {
+            ex.printStackTrace();
+        }
+    }
 
 
-        } catch (AWTException e) {
 
-            e.printStackTrace();
+private void robotManipulation(){
+
 
         }
 
-    }
-
-}
+        }
