@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class InputData {
     public ArrayList start() throws IOException, InterruptedException {
@@ -14,19 +15,18 @@ public class InputData {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String fileName = reader.readLine();
         reader.close();
-        Thread.sleep(5000); // сделать здесь старт счетчика для переключения программ
-        BufferedReader inputStream = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
-        ArrayList<Character> listChar = new ArrayList<>();
-        int c;
-        while ((c = reader.read()) != -1) {
-            listChar.add((char) c);
-        }
-        for (Character symbol : listChar) {
+        Thread.sleep(8000); // сделать здесь старт счетчика для переключения программ
+        FileInputStream inputStream = new FileInputStream(fileName);
+        byte[] data = new byte[inputStream.available()];
+        inputStream.read(data);
+        ArrayList<Character> charMas = new ArrayList<>();
+        for (byte datMas : data) {
 
-
+            char ch = (char) datMas;
+            charMas.add(ch);
         }
 
         inputStream.close();
-        return listChar;
+        return charMas;
     }
 }

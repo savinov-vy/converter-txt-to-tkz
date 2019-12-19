@@ -20,8 +20,8 @@ public class RobotExp {
     }
 
     public void robotWriting() {
-        try {
 
+        try {
             java.awt.Robot robot = new java.awt.Robot();
 
             // Creates the delay of 5 sec so that you can open notepad before
@@ -76,10 +76,25 @@ public class RobotExp {
     }
 
 
-
-private void robotManipulation(){
-
-
+    private void robotManipulation() {
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
         }
 
-        }
+        robot.keyPress(KeyEvent.VK_DOWN); ;
+        robot.keyPress(KeyEvent.VK_UP); ;
+        robot.keyPress(KeyEvent.VK_DOWN); ;
+        robot.keyPress(KeyEvent.VK_RIGHT); ;
+        robot.keyPress(KeyEvent.VK_RIGHT); ;
+        robot.keyPress(KeyEvent.VK_LEFT); ;
+        robot.keyPress(KeyEvent.VK_DOWN); ;
+        robot.keyPress(KeyEvent.VK_SPACE); ;
+        robot.keyPress(KeyEvent.VK_ENTER); ;
+        robot.keyPress(KeyEvent.VK_ENTER); ;
+        robot.keyPress(KeyEvent.VK_ENTER); ;
+    }
+
+}

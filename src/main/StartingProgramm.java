@@ -8,6 +8,7 @@ public class StartingProgramm {
 
         InputData inputData = new InputData();
 
+
         RobotExp robot = new RobotExp(inputData.start());
         robot.startRobot();
 
